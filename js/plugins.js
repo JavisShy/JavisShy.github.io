@@ -11,14 +11,24 @@ Fluid.plugins = {
   typing: function(text) {
     if (!('Typed' in window)) { return; }
 
-    var typed = new window.Typed('#subtitle', {
+    /* var typed = new window.Typed('#subtitle', {
       strings: [
         '  ',
-        text + '&nbsp;'
+        text + '想到，做到，得到'
       ],
       cursorChar: CONFIG.typing.cursorChar,
       typeSpeed : CONFIG.typing.typeSpeed,
       loop      : CONFIG.typing.loop
+    }); */
+	var typed = new Typed("#subtitle", {
+            strings: ['如果你瞄准月亮，即使迷失也是落在星河之间','醉后不知天在水，满船清梦压星河','我一直坚信真诚是世间无敌',
+					'光荣在于平淡，艰巨在于漫长','爱❤是最小的共产主义','放开手脚看世界'],
+            startDelay: 0,
+            typeSpeed: 120,
+            backSpeed: 80,
+            loop: true,
+            showCursor: true,
+            shuffle: false
     });
     typed.stop();
     var subtitle = document.getElementById('subtitle');
